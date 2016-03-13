@@ -1,0 +1,50 @@
+application: gegfestpraha
+version: praha2016
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: index.html
+  upload : index.html
+
+- url: /test.html
+  static_files: test.html
+  upload : test.html
+
+- url: /potvrzeni(.*)
+  mime_type: text/html
+  static_files: potvrzeni/index.html
+  upload: potvrzeni/index\.html$
+
+- url: /speakers(.*)
+  mime_type: text/html
+  static_files: speakers/index.html
+  upload: speakers/index\.html$
+
+- url: /team(.*)
+  mime_type: text/html
+  static_files: team/index.html
+  upload: team/index\.html$
+
+- url: /program(.*)
+  mime_type: text/html
+  static_files: program/index.html
+  upload: program/index\.html$
+
+- url: /css/(.*)
+  static_files: css/\1
+  upload : css/.*
+
+- url: /js/(.*)
+  static_files: js/\1
+  upload : js/.*
+
+- url: /fonts/(.*)
+  static_files: fonts/\1
+  upload : fonts/.*
+
+- url: /images/(.*)
+  static_files: images/\1
+  upload : images/.*
